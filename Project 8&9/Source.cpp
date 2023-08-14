@@ -1,5 +1,16 @@
 #include "Classifier.h"
 
+// Group 26 - Project (Lab 8&9) - Jose & Harsh
+
+/**
+ * @brief Main function to demonstrate the use of classifiers and phone orientation prediction.
+ *
+ * This program provides options to use testing data from a file, input user-defined gravity vector data,
+ * use unknown data from a file, or exit the program.
+ *
+ * @return Exit status code.
+ */
+
 int main() 
 {
 
