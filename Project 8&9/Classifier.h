@@ -4,17 +4,15 @@
 #include <sstream>
 #include <vector>
 #include <cmath>
-
 using namespace std;
 
-// Define a structure to hold gravity vector data
+
 struct GravityVector 
 {
-    double x, y, z;     // Axis
-    int label;          // Phone orientation label
+    double x, y, z;     
+    int label;          
 };
 
-// Nearest Neighbor (NN) Classifier
 class NNClassifier 
 {
 private:
@@ -23,13 +21,12 @@ private:
 public:
     void loadTrainingData(const string& filename);
 
-    int predictOrientation(const GravityVector& testData);
+    int predictPhoneOrientation(const GravityVector& testData);
 
 private:
     double calculateDistance(const GravityVector& v1, const GravityVector& v2);
 };
 
-// Dummy Classifier - AnotherClassifier
 class AnotherClassifier 
 {
 public:
@@ -37,6 +34,6 @@ public:
     void classifyFaceDown() { cout << "AnotherClassifier: Face Down\n"; }
     void classifyPortrait() { cout << "AnotherClassifier: Portrait\n"; }
     void classifyPortraitUpsideDown() { cout << "AnotherClassifier: Portrait Upside Down\n"; }
-    void classifyLeftLandscape() { cout << "AnotherClassifier: Left Landscape\n"; }
-    void classifyRightLandscape() { cout << "AnotherClassifier: Right Landscape\n"; }
+    void classifyLandscapeLeft() { cout << "AnotherClassifier: Landscape Left \n"; }
+    void classifyLandscapeRight() { cout << "AnotherClassifier: Landscape Right\n"; }
 };

@@ -1,37 +1,37 @@
 #include "Classifier.h"
 
-// NNClassifier Class's Functions
+
 void NNClassifier::loadTrainingData(const string& filename)
 {
-    // Load training data from a file
-    ifstream file(filename);
-    string line;
+
+    ifstream fileName(filename);
+    string fileLine;
     char comma;
 
-    while (getline(file, line)) 
+    while (getline(fileName, fileLine))
     {
         GravityVector data;
-        istringstream iss(line);
-        iss >> data.x >> comma >> data.y >> comma >> data.z >> comma >> data.label;
-        trainingData.push_back(data);
+        istringstream iss(fileLine);
+        iss >> data.x >> comma >> data.y >> comma >> data.z >> comma >> data.label; 
+        trainingData.push_back(data); 
     }
 
-    file.close();
+    fileName.close(); 
 }
 
-int NNClassifier::predictOrientation(const GravityVector& testData) 
+int NNClassifier::predictPhoneOrientation(const GravityVector& testData)
 {
-    double minDistance = numeric_limits<double>::max();
+    double minimumDistance = numeric_limits<double>::max();
     int predictedLabel = -1;
 
-    for (const auto& trainData : trainingData) 
+    for (const auto& trainData : trainingData)  
     {
         double distance = calculateDistance(testData, trainData);
 
-        if (distance < minDistance) 
+        if (distance < minimumDistance)
         {
-            minDistance = distance;
-            predictedLabel = trainData.label;
+            minimumDistance = distance;
+            predictedLabel = trainData.label; 
         }
     }
 
