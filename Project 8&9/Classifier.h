@@ -5,27 +5,23 @@
 #include <vector>
 #include <cmath>
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <cmath>
+using namespace std;
 
 // Define a structure to hold gravity vector data
 struct GravityVector 
 {
-    double x, y, z;
-    int label; // Phone orientation label
+    double x, y, z;     // Axis
+    int label;          // Phone orientation label
 };
 
 // Nearest Neighbor (NN) Classifier
 class NNClassifier 
 {
 private:
-    std::vector<GravityVector> trainingData;
+    vector<GravityVector> trainingData;
 
 public:
-    void loadTrainingData(const std::string& filename);
+    void loadTrainingData(const string& filename);
 
     int predictOrientation(const GravityVector& testData);
 
@@ -37,10 +33,10 @@ private:
 class AnotherClassifier 
 {
 public:
-    void classifyFaceUp() { std::cout << "AnotherClassifier: Face Up\n"; }
-    void classifyFaceDown() { std::cout << "AnotherClassifier: Face Down\n"; }
-    void classifyPortrait() { std::cout << "AnotherClassifier: Portrait\n"; }
-    void classifyPortraitUpsideDown() { std::cout << "AnotherClassifier: Portrait Upside Down\n"; }
-    void classifyLeftLandscape() { std::cout << "AnotherClassifier: Left Landscape\n"; }
-    void classifyRightLandscape() { std::cout << "AnotherClassifier: Right Landscape\n"; }
+    void classifyFaceUp() { cout << "AnotherClassifier: Face Up\n"; }
+    void classifyFaceDown() { cout << "AnotherClassifier: Face Down\n"; }
+    void classifyPortrait() { cout << "AnotherClassifier: Portrait\n"; }
+    void classifyPortraitUpsideDown() { cout << "AnotherClassifier: Portrait Upside Down\n"; }
+    void classifyLeftLandscape() { cout << "AnotherClassifier: Left Landscape\n"; }
+    void classifyRightLandscape() { cout << "AnotherClassifier: Right Landscape\n"; }
 };
